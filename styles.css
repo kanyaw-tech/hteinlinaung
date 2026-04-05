@@ -4,12 +4,12 @@
     --primary-navy: #03045e;
     --primary-teal: #0077b6;
     --accent-color: #00b4d8;
-    --light-blue: #90e0ef;
-    --bg-light: #caf0f8;
+    --light-blue: #D6E4EE;
+    --bg-light: #f8fafc;
     --bg-white: #FFFFFF;
-    --text-main: #03045e;
-    --text-muted: #0077b6;
-    --border-color: #90e0ef;
+    --text-main: #0f172a;
+    --text-muted: #334155;
+    --border-color: #e2e8f0;
     
     /* Typography */
     --font-serif: 'Playfair Display', serif;
@@ -224,9 +224,33 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
 }
 
+/* About Section */
+.about {
+    background-color: var(--bg-white);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--text-main);
+    text-align: justify;
+}
+
+.about-text {
+    margin-bottom: 1.5rem;
+    text-indent: 2.5rem;
+    text-align: justify;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
 /* Academic Section - Highlighting Major */
 .academic {
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -608,38 +632,28 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    box-shadow: 0 20px 50px rgba(3, 4, 94, 0.15);
-    animation: morphProfile 8s ease-in-out infinite;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(3, 4, 94, 0.1);
     position: relative;
     z-index: 2;
-    border: 4px solid var(--bg-white);
+    border: 6px solid var(--bg-white);
+    transition: transform var(--transition-smooth);
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
 }
 
 .profile-backdrop {
     position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    background: linear-gradient(135deg, var(--light-blue), var(--accent-color));
+    top: -3%;
+    left: -3%;
+    width: 106%;
+    height: 106%;
+    background: transparent;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     z-index: 1;
-    animation: pulseBackdrop 6s ease-in-out infinite alternate;
-    opacity: 0.6;
-}
-
-@keyframes morphProfile {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-    50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-    75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-}
-
-@keyframes pulseBackdrop {
-    0% { transform: scale(1) rotate(0deg); }
-    100% { transform: scale(1.05) rotate(10deg); }
 }
 
 /* Activity Images */
